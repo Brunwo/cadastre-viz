@@ -307,10 +307,7 @@ export default function App() {
               <p className="text-xs text-gray-500 font-medium">IGN / Data.gouv.fr API Connector</p>
             </div>
           </div>
-          <div className="text-sm text-gray-500 hidden sm:block">
-            Powered by Google Gemini 2.5 & API Carto
-          </div>
-        </div>
+                </div>
       </header>
 
       {/* Main Content - Flex Row on Desktop */}
