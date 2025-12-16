@@ -1,0 +1,5 @@
+{
+  "description": "retrouvez vos parcelles en France, et visualisez avec differents fond de cartes ",
+  "requestFramePermissions": [],
+  "name": "cadastre viz"
+}
