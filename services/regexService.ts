@@ -29,10 +29,10 @@ export const parseParcelTextRegex = (inputText: string): Array<{ communeName: st
       continue;
     }
 
-    // Pattern 2: Minimalist (e.g., "LENGELSHEIM B 45" or "NOUSSEVILLER-LES-BITCHE 10 0123")
-    // Format: Commune + Section(1-2 chars) + Number(digits)
+    // Pattern 2: Minimalist (e.g., "LENGELSHEIM B 45", "NOUSSEVILLER-LES-BITCHE 10 0123", or "ouessant C N° 3563")
+    // Format: Commune + Section(1-2 chars) + optional Number indicator + Number(digits)
     // We assume the section is short (1-2 chars) and the number is numeric at the end.
-    match = cleanLine.match(/^(.+?)[\s\t]+([A-Z0-9]{1,2})[\s\t]+(\d+)$/i);
+    match = cleanLine.match(/^(.+?)[\s\t]+([A-Z0-9]{1,2})[\s\t]+(?:N°|No|N|Num|Numero)?\.?[\s\t]*(\d+)$/i);
     
     if (match) {
         // Basic filter: ensure 'section' isn't likely part of the commune name (though difficult without dictionary)

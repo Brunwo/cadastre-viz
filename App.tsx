@@ -7,9 +7,13 @@ import ParcelMap from './components/ParcelMap';
 import { Map, Loader2, FileText, Sparkles, Copy, Ruler, Download, Zap, CheckCircle2, AlertCircle } from 'lucide-react';
 import JSZip from 'jszip';
 
-const ExampleData = `SCHORBACH S C N° 0584
-NOUSSEVILLER-LES-BITCHE S 10 N° 0123
-LENGELSHEIM Section B N° 45`;
+const ExampleData = `
+ouessant c 001
+ouessant S c 002
+OUESSANT C N° 3564
+ouessant Section C 3561
+ouessant S C 3562
+ouessant C N° 3563`;
 
 // --- Geometry Helper (Pure JS, no Leaflet dependency for List) ---
 const calculateGeoJsonArea = (geoJson: any): number => {
@@ -335,7 +339,7 @@ export default function App() {
             <textarea
               value={inputText}
               onChange={(e) => setInputText(e.target.value)}
-              placeholder="Paste list of parcels here...&#10;e.g., SCHORBACH S C N° 0584"
+              placeholder="Paste list of parcels here...&#10;e.g., OUESSANT C 3564"
               className="w-full h-32 p-3 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none resize-none font-mono bg-gray-50"
             />
             
